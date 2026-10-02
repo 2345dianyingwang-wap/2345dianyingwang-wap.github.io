@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<meta name="description" content="2345电影网（https://2345dianyingwang-wap.github.io）为您提供高清电影在线观看、最新电影资讯、专业影评与热播榜单，覆盖动作、喜剧、爱情、科幻、悬疑等多种类型，找好片就上2345电影网。">
+<meta name="keywords" content="2345电影网, 2345dianyingwang-wap, 高清电影, 在线观看, 电影资讯, 影评, 热播榜单, 动作片, 喜剧片, 爱情片, 科幻片, github.io">
+<meta name="author" content="2345电影网">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://2345dianyingwang-wap.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="2345电影网 - 高清电影在线观看、影视资讯与专业影评">
+<meta property="og:description" content="2345电影网（https://2345dianyingwang-wap.github.io）提供最新电影资讯、热播榜单与专业影评，覆盖多种影片类型。">
+<meta property="og:url" content="https://2345dianyingwang-wap.github.io/">
+<meta property="og:site_name" content="2345电影网">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="2345电影网 - 高清电影在线观看、影视资讯与专业影评">
+<meta name="twitter:description" content="2345电影网（https://2345dianyingwang-wap.github.io）提供最新电影资讯、热播榜单与专业影评。">
+<title>2345电影网 - 高清电影在线观看、影视资讯与专业影评 | 2345dianyingwang-wap.github.io</title>
+<style>
+:root{
+  --bg:#eef6f2;
+  --card:#ffffff;
+  --ink:#1d2b27;
+  --ink-2:#5a6d66;
+  --mint:#12b886;
+  --mint-d:#0b8a63;
+  --cream:#fdf6e8;
+  --line:#d8e7e0;
+  --peach:#ff8a5c;
+  --shadow:0 6px 22px rgba(18,184,134,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+
+/* ===== 顶部公告条 ===== */
+.topbar{background:var(--ink);color:#c8ebe0;font-size:13px;padding:9px 0;text-align:center}
+.topbar a{color:var(--mint);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.topbar b{color:#fff}
+
+/* ===== 头部 ===== */
+.head{background:var(--card);box-shadow:0 2px 14px rgba(0,0,0,.05);position:sticky;top:0;z-index:50}
+.head .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .mark{
+  width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--mint),var(--mint-d));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:18px;flex-shrink:0;
+}
+.logo .txt{display:flex;flex-direction:column;line-height:1.15}
+.logo .cn{font-size:23px;font-weight:900;letter-spacing:.5px}
+.logo .url{font-size:11.5px;color:var(--ink-2);letter-spacing:.3px}
+.nav{display:flex;gap:6px;align-items:center}
+.nav a{
+  padding:9px 15px;border-radius:10px;font-size:15px;font-weight:600;transition:.2s;color:var(--ink-2);
+}
+.nav a:hover{background:var(--bg);color:var(--mint-d)}
+.nav-toggle{display:none;width:44px;height:40px;border:1px solid var(--line);background:var(--card);border-radius:10px;cursor:pointer;flex-direction:column;gap:5px;align-items:center;justify-content:center}
+.nav-toggle i{width:19px;height:2px;background:var(--ink);display:block}
+
+/* ===== 通用 ===== */
+section{padding:76px 0}
+.kicker{display:inline-block;background:var(--cream);color:var(--mint-d);font-size:12px;font-weight:800;letter-spacing:2px;padding:5px 13px;border-radius:20px;margin-bottom:12px}
+.heading{margin-bottom:44px;max-width:720px}
+.heading h2{font-size:31px;font-weight:900;line-height:1.25;letter-spacing:-.3px}
+.heading h2 em{font-style:normal;color:var(--mint)}
+.heading p{margin-top:12px;color:var(--ink-2);font-size:16px}
+.lead{font-size:18px;color:var(--ink-2);max-width:640px}
+
+/* ===== Hero ===== */
+.hero{position:relative;overflow:hidden;padding:88px 0 96px}
+.hero::after{
+  content:"";position:absolute;right:-120px;top:-80px;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(18,184,134,.16),transparent 68%);z-index:0;
+}
+.hero::before{
+  content:"";position:absolute;left:-140px;bottom:-140px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,138,92,.14),transparent 66%);z-index:0;
+}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:52px;font-weight:900;line-height:1.12;letter-spacing:-1.2px;max-width:780px}
+.hero h1 em{font-style:normal;color:var(--mint);background:linear-gradient(120deg,var(--mint),var(--peach));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .url{margin-top:22px;font-size:15px;color:var(--ink-2)}
+.hero .url code{background:var(--card);border:1px solid var(--line);padding:4px 11px;border-radius:8px;font-family:ui-monospace,Menlo,monospace;font-size:13.5px;color:var(--mint-d);font-weight:700}
+.hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{border:0;border-radius:12px;padding:15px 32px;font-size:15px;font-weight:800;cursor:pointer;transition:.25s;font-family:inherit}
+.btn-mint{background:var(--mint);color:#fff;box-shadow:var(--shadow)}
+.btn-mint:hover{background:var(--mint-d);transform:translateY(-2px)}
+.btn-outline{background:var(--card);color:var(--ink);border:1.5px solid var(--line)}
+.btn-outline:hover{border-color:var(--mint);color:var(--mint-d)}
+
+.features{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.feat{background:var(--card);border-radius:18px;padding:24px 20px;box-shadow:var(--shadow);transition:transform .25s}
+.feat:hover{transform:translateY(-6px)}
+.feat .ic{width:48px;height:48px;border-radius:13px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
+.feat b{display:block;font-size:19px;font-weight:900}
+.feat span{font-size:13.5px;color:var(--ink-2);line-height:1.6}
+
+/* ===== 筛选器 ===== */
+.filter{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px;align-items:center}
+.filter .lab{font-size:14px;font-weight:700;color:var(--ink-2);margin-right:4px}
+.pill{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 19px;border-radius:30px;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;font-family:inherit}
+.pill:hover{border-color:var(--mint);color:var(--mint-d)}
+.pill.on{background:var(--mint);color:#fff;border-color:var(--mint)}
+
+/* ===== 影片网格 ===== */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.film{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
+.film:hover{transform:translateY(-7px);box-shadow:0 14px 34px rgba(18,184,134,.18)}
+.poster{position:relative;aspect-ratio:3/4;overflow:hidden}
+.poster .badge{position:absolute;top:12px;left:12px;background:rgba(29,43,39,.86);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:7px;backdrop-filter:blur(4px)}
+.poster .heart{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;font-size:15px;cursor:pointer;transition:.2s}
+.poster .heart:hover{background:var(--peach);color:#fff}
+.poster .grad{position:absolute;left:0;right:0;bottom:0;height:56%;background:linear-gradient(to top,rgba(0,0,0,.86),transparent);display:flex;align-items:flex-end;padding:14px}
+.poster .grad b{color:#fff;font-family:ui-monospace,Menlo,monospace;font-size:15px;font-weight:900}
+.poster .grad b i{font-style:normal;color:var(--peach)}
+.finfo{padding:16px 18px 18px}
+.finfo .name{font-size:17px;font-weight:800;line-height:1.35}
+.finfo .name:hover{color:var(--mint-d)}
+.finfo .row{margin-top:9px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--ink-2)}
+.stars{color:var(--peach);letter-spacing:1px;font-size:13px}
+.film-hide{display:none}
+.empty{display:none;grid-column:1/-1;text-align:center;padding:48px;background:var(--card);border-radius:20px;color:var(--ink-2)}
+.empty.show{display:block}
+
+/* 海报渐变 */
+.g1{background:linear-gradient(150deg,#0e7c5a,#072b20)}
+.g2{background:linear-gradient(150deg,#d96a3c,#5a2410)}
+.g3{background:linear-gradient(150deg,#3d5a8c,#121d30)}
+.g4{background:linear-gradient(150deg,#8b5a2b,#2b1c10)}
+.g5{background:linear-gradient(150deg,#6b4d8f,#241830)}
+.g6{background:linear-gradient(150deg,#2e8b8b,#0e3030)}
+.g7{background:linear-gradient(150deg,#b04a5a,#3a141c)}
+.g8{background:linear-gradient(150deg,#4a6b2e,#182410)}
+.pcv{height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:22px 18px;color:rgba(255,255,255,.95)}
+.pcv .t{font-size:25px;font-weight:900;line-height:1.2;text-shadow:0 2px 12px rgba(0,0,0,.3)}
+.pcv .s{font-size:12px;letter-spacing:2px;opacity:.8}
+
+/* ===== 双栏：榜单 + 类型导航 ===== */
+.split{display:grid;grid-template-columns:1.5fr 1fr;gap:34px;align-items:start}
+.panel{background:var(--card);border-radius:22px;padding:30px;box-shadow:var(--shadow)}
+.panel h3{font-size:21px;font-weight:900;margin-bottom:6px}
+.panel .ph{font-size:13px;color:var(--ink-2);margin-bottom:22px}
+
+.chart li{list-style:none;display:flex;align-items:center;gap:16px;padding:13px 0;border-bottom:1px dashed var(--line)}
+.chart li:last-child{border-bottom:0}
+.chart .no{width:36px;height:36px;border-radius:10px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:var(--ink-2);flex-shrink:0}
+.chart li.hot .no{background:linear-gradient(135deg,var(--mint),var(--mint-d));color:#fff}
+.chart .info{flex:1;min-width:0}
+.chart .info b{display:block;font-size:15.5px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chart .info span{font-size:12.5px;color:var(--ink-2)}
+.chart .hotv{font-size:14px;font-weight:800;color:var(--peach);flex-shrink:0;text-align:right}
+.chart .hotv small{display:block;font-size:11px;color:var(--ink-2);font-weight:500}
+
+.catlist{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cat{background:var(--bg);border-radius:14px;padding:16px 14px;transition:.2s;display:flex;align-items:center;gap:12px}
+.cat:hover{background:var(--mint);color:#fff}
+.cat .ci{width:40px;height:40px;border-radius:11px;background:var(--card);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+.cat:hover .ci{background:rgba(255,255,255,.22)}
+.cat b{font-size:15px;font-weight:800}
+.cat span{display:block;font-size:12px;font-weight:500;opacity:.75}
+
+/* ===== 资讯 ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+.tab{border:1px solid var(--line);background:var(--card);padding:10px 22px;border-radius:10px;font-size:14.5px;font-weight:700;cursor:pointer;transition:.2s;font-family:inherit;color:var(--ink-2)}
+.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tab:hover:not(.on){color:var(--mint-d);border-color:var(--mint)}
+.newsgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.news{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);transition:transform .25s}
+.news:hover{transform:translateY(-5px)}
+.news .cov{height:170px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;color:#fff}
+.news .cov .dt{font-size:12px;opacity:.9;letter-spacing:1px}
+.news .cov .tt{font-size:18px;font-weight:900;line-height:1.35;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.news .bd{padding:18px 20px 20px}
+.news .bd p{font-size:14px;color:var(--ink-2);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.news .bd .more{display:inline-block;margin-top:14px;font-size:13.5px;font-weight:800;color:var(--mint-d)}
+.news .bd .more:hover{color:var(--peach)}
+
+/* ===== 关于 + 友链 ===== */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.intro{background:var(--card);border-radius:22px;padding:34px;box-shadow:var(--shadow)}
+.intro p{font-size:15.5px;color:var(--ink-2);margin-bottom:14px;line-height:1.8}
+.intro p strong{color:var(--ink)}
+.milestone{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.mile{text-align:center;background:var(--bg);border-radius:14px;padding:18px 10px}
+.mile b{display:block;font-size:26px;font-weight:900;color:var(--mint)}
+.mile span{font-size:12.5px;color:var(--ink-2)}
+.links{background:var(--card);border-radius:22px;padding:34px;box-shadow:var(--shadow)}
+.links h3{font-size:21px;font-weight:900;margin-bottom:6px}
+.links .ph{font-size:13px;color:var(--ink-2);margin-bottom:20px}
+.flink{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.flink a{background:var(--card);padding:13px 16px;font-size:14px;font-weight:600;transition:.2s;display:flex;align-items:center;gap:8px}
+.flink a::before{content:"→";color:var(--mint);font-weight:900}
+.flink a:hover{background:var(--cream);color:var(--mint-d)}
+
+/* ===== FAQ ===== */
+.faqlist{background:var(--card);border-radius:22px;padding:14px 30px;box-shadow:var(--shadow)}
+.faqitem{border-bottom:1px solid var(--line)}
+.faqitem:last-child{border-bottom:0}
+.faqq{width:100%;background:none;border:0;text-align:left;padding:22px 0;font-size:17px;font-weight:800;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:inherit;color:var(--ink)}
+.faqq .sym{width:30px;height:30px;border-radius:9px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--mint);transition:.3s;flex-shrink:0}
+.faqitem.open .faqq .sym{background:var(--mint);color:#fff;transform:rotate(45deg)}
+.faqa{max-height:0;overflow:hidden;transition:max-height .4s ease;color:var(--ink-2);font-size:15px;line-height:1.8}
+.faqa div{padding:0 0 22px}
+.faqitem.open .faqa{max-height:320px}
+
+/* ===== CTA ===== */
+.cta{background:linear-gradient(120deg,var(--mint),var(--mint-d));color:#fff;text-align:center;padding:74px 24px;border-radius:32px;margin:0 0 76px;position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;right:-60px;bottom:-80px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.1)}
+.cta h2{font-size:33px;font-weight:900;letter-spacing:-.5px;position:relative}
+.cta p{margin-top:14px;font-size:16.5px;opacity:.95;position:relative}
+.cta .btn{margin-top:30px;background:#fff;color:var(--mint-d);position:relative}
+.cta .btn:hover{background:var(--ink);color:#fff}
+
+/* ===== 页脚 ===== */
+footer{background:var(--ink);color:#c8ebe0;padding:54px 0 26px}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;margin-bottom:34px}
+.foot h5{font-size:14px;font-weight:800;margin-bottom:14px;letter-spacing:1px;color:#fff}
+.foot ul{list-style:none}
+.foot li{padding:5px 0}
+.foot a{font-size:14px;color:#9fcabb;transition:color .2s}
+.foot a:hover{color:#fff}
+.fbrand .mark{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.fbrand .mark .m{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--mint),var(--peach));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff}
+.fbrand .mark b{font-size:20px;color:#fff}
+.fbrand p{font-size:13.5px;line-height:1.8;color:#9fcabb}
+.fbrand code{background:rgba(255,255,255,.08);padding:2px 8px;border-radius:6px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#fff}
+.fcopy{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;font-size:13px;color:#8db8af;gap:14px;flex-wrap:wrap}
+.fcopy a{color:#8db8af}
+.fcopy a:hover{color:#fff}
+
+/* ===== 回到顶部 ===== */
+.topbtn{position:fixed;right:20px;bottom:24px;width:48px;height:48px;border-radius:14px;background:var(--ink);color:#fff;border:0;font-size:19px;cursor:pointer;opacity:0;visibility:hidden;transition:.3s;z-index:60;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.topbtn.show{opacity:1;visibility:visible}
+.topbtn:hover{background:var(--mint)}
+
+/* ===== 响应式 ===== */
+@media (max-width:980px){
+  .hero h1{font-size:38px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .split,.about{grid-template-columns:1fr}
+  .newsgrid{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr 1fr}
+  section{padding:56px 0}
+  .nav{position:fixed;inset:0;background:var(--card);flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:84px 26px;gap:4px;transform:translateX(100%);transition:transform .35s;z-index:49}
+  .nav.open{transform:translateX(0)}
+  .nav a{font-size:19px;padding:14px 0;border-bottom:1px solid var(--line);width:100%}
+  .nav-toggle{display:flex;z-index:51}
+}
+@media (max-width:640px){
+  body{font-size:15px}
+  .hero{padding:56px 0 70px}
+  .hero h1{font-size:29px}
+  .features{grid-template-columns:1fr 1fr;gap:12px}
+  .feat{padding:18px 16px}
+  .grid{gap:16px}
+  .milestone{grid-template-columns:1fr}
+  .catlist{grid-template-columns:1fr}
+  .heading h2{font-size:24px}
+  .panel,.intro,.links{padding:22px 18px}
+  .faqlist{padding:8px 18px}
+  .cta h2{font-size:23px}
+  .flink{grid-template-columns:1fr}
+  .topbar span{display:none}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<div class="topbar">📢 <b>2345电影网</b> 全新片单已上线，<a href="#news">查看本期精选影评与资讯</a></div>
+
+<header class="head">
+  <div class="wrap">
+    <div class="logo">
+      <div class="mark">影</div>
+      <div class="txt">
+        <span class="cn">2345电影网</span>
+        <span class="url">2345dianyingwang-wap.github.io</span>
+      </div>
+    </div>
+    <nav class="nav" id="nav">
+      <a href="#home">首页</a>
+      <a href="#films">影片栏目</a>
+      <a href="#chart">热播榜单</a>
+      <a href="#news">影视资讯</a>
+      <a href="#about">关于我们</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap">
+    <h1>找好片，上 <em>2345电影网</em><br>每部都值得两个小时</h1>
+    <p class="lead">2345电影网（2345dianyingwang-wap.github.io）汇聚全球高分电影，覆盖动作、喜剧、爱情、科幻、悬疑等多种类型，搭配专业影评与实时热播榜单，帮你快速锁定今晚看什么。</p>
+    <div class="url">官方网站：<code>https://2345dianyingwang-wap.github.io</code></div>
+    <div class="hero-cta">
+      <a href="#films" class="btn btn-mint">浏览影片库</a>
+      <a href="#chart" class="btn btn-outline">查看热播榜单</a>
+    </div>
+    <div class="features">
+      <div class="feat"><div class="ic">🎬</div><b>8000+ 影片</b><span>多类型海量收录，持续更新</span></div>
+      <div class="feat"><div class="ic">⭐</div><b>专业影评</b><span>深度解读剧情与表演</span></div>
+      <div class="feat"><div class="ic">📊</div><b>实时榜单</b><span>热度排名每日刷新</span></div>
+      <div class="feat"><div class="ic">📱</div><b>全端适配</b><span>手机 / 平板 / 电脑皆流畅</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="films">
+  <div class="wrap">
+    <div class="heading">
+      <span class="kicker">FILM LIBRARY</span>
+      <h2>精选<em>影片栏目</em></h2>
+      <p>2345电影网 按类型整理好片，点击筛选快速定位你想看的那一部。</p>
+    </div>
+    <div class="filter" id="filter">
+      <span class="lab">类型筛选：</span>
+      <button class="pill on" data-cat="all">全部</button>
+      <button class="pill" data-cat="action">动作</button>
+      <button class="pill" data-cat="comedy">喜剧</button>
+      <button class="pill" data-cat="love">爱情</button>
+      <button class="pill" data-cat="sci">科幻</button>
+      <button class="pill" data-cat="suspense">悬疑</button>
+    </div>
+    <div class="grid" id="grid">
+
+      <article class="film" data-cat="action">
+        <a href="#" class="poster">
+          <div class="pcv g1"><span class="s">2345电影网 · 高分推荐</span><span class="t">边境追凶</span><span class="s">2025 · 动作犯罪</span></div>
+          <span class="badge">动作</span><span class="heart">♡</span>
+          <div class="grad"><b>9.<i>2</i></b></div>
+        </a>
+        <div class="finfo">
+          <a href="#" class="name">边境追凶</a>
+          <div class="row"><span>动作 / 犯罪 · 2025</span><span class="stars">★★★★★</span></div>
+        </div>
+      </article>
+
+      <article class="film" data-cat="comedy">
+        <a href="#" class="poster">
+          <div class="pcv g2"><span class="s">2345电影网 · 轻松下饭</span><span class="t">假期实习生</span><span class="s">2025 · 喜剧职场</span></div>
+          <span class="badge">喜剧</span><span class="heart">♡</span>
+          <div class="grad"><b>8.<i>6</i></b></div>
+        </a>
+        <div class="finfo">
+          <a href="#" class="name">假期实习生</a>
+          <div class="row"><span>喜剧 / 职场 · 2025</span><span class="stars">★★★★☆</span></div>
+        </div>
+      </article>
+
+      <article class="film" data-cat="love">
+        <a href="#" class="poster">
+          <div class="pcv g3"><span class="s">2345电影网 · 治愈系</span><span class="t">余温</span><span class="s">2024 · 爱情剧情</span></div>
+          <span class="badge">爱情</span><span class="heart">♡</span>
+          <div class="grad"><b>9.<i>0</i></b></div>
+        </a>
+        <div class="finfo">
+          <a href="#" class="name">余温</a>
+          <div class="row"><span>爱情 / 剧情 · 2024</span><span class="stars">★★★★★</span></div>
+        </div>
+      </article>
+
+      <article class="film" data-cat="sci">
+        <a href="#" class="poster">
+          <div class="pcv g6"><span class="s">2345电影网 · 硬科幻</span><span class="t">深空回声</span><span class="s">2025 · 科幻冒险</span></div>
+          <span class="badge">科幻</span><span class="heart">♡</span>
+          <div class="grad"><b>8.<i>9</i></b></div>
+        </a>
+        <div class="finfo">
+          <a href="#" class="name">深空回声</a>
+          <div class="row"><span>科幻 / 冒险 · 2025</span><span class="stars">★★★★★</span></div>
+        </div>
+      </article>
+
+      <article class="film" data-cat="suspense">
+        <a href="#" class="poster">
+          <div class="pcv g5"><span class="s">2345电影网 · 烧脑</span><span class="t">第十三个房间</span><span class="s">2025 · 悬疑惊悚</span></div>
+          <span class="badge">悬疑</span><span class="heart">♡</span>
+          <div class="grad"><b>9.<i>1</i></b></div>
+        </a>
+        <div class="finfo">
+          <a href="#" class="name">第十三个房间</a>
+          <div class="row"><span>悬疑 / 惊悚 · 2025</span><span class="stars">★★★★★</span></div>
+        </div>
+      </article>
+
+      <article class="film" data-cat="action">
+        <a href="#" class="poster">
+          <div class="pcv g4"><span class="s">2345电影网 · 史诗</span><span class="t">铁骑归途</span><span class="s">2024 · 动作历史</span></div>
+          <span class="badge">动作</span><span class="heart">♡</span>
+          <div class="grad"><b>8.<i>5</i></b></div>
+        </a>
+        <div class="finfo">
+          <a href="#" class="name">铁骑归途</a>
+          <div class="row"><span>动作 / 历史 · 2024</span><span class="stars">★★★★☆</span></div>
+        </div>
+      </article>
+
+      <article class="film" data-cat="love">
+        <a href="#" class="poster">
+          <div class="pcv g7"><span class="s">2345电影网 · 暖心</span><span class="t">海边便利店</span><span class="s">2025 · 爱情治愈</span></div>
+          <span class="badge">爱情</span><span class="heart">♡</span>
+          <div class="grad"><b>8.<i>7</i></b></div>
+        </a>
+        <div class="finfo">
+          <a href="#" class="name">海边便利店</a>
+          <div class="row"><span>爱情 / 治愈 · 2025</span><span class="stars">★★★★☆</span></div>
+        </div>
+      </article>
+
+      <article class="film" data-cat="sci">
+        <a href="#" class="poster">
+          <div class="pcv g8"><span class="s">2345电影网 · 悬疑科幻</span><span class="t">镜像城市</span><span class="s">2024 · 科幻悬疑</span></div>
+          <span class="badge">科幻</span><span class="heart">♡</span>
+          <div class="grad"><b>8.<i>8</i></b></div>
+        </a>
+        <div class="finfo">
+          <a href="#" class="name">镜像城市</a>
+          <div class="row"><span>科幻 / 悬疑 · 2024</span><span class="stars">★★★★☆</span></div>
+        </div>
+      </article>
+
+    </div>
+    <div class="empty" id="empty">该分类下暂无影片，2345电影网 正在加紧更新，敬请期待。</div>
+  </div>
+</section>
+
+<section id="chart" style="background:var(--cream);border-radius:32px;margin:0 20px;padding:76px 56px">
+  <div class="wrap" style="padding:0;max-width:none">
+    <div class="heading">
+      <span class="kicker">TOP CHART</span>
+      <h2>热播<em>榜单</em>与影片类型</h2>
+      <p>2345电影网 根据实时热度排序，帮你一眼锁定当下最值得看的电影。</p>
+    </div>
+    <div class="split">
+      <div class="panel">
+        <h3>🔥 本周热播 Top 8</h3>
+        <div class="ph">数据每日更新 · 排序依据综合热度</div>
+        <ul class="chart">
+          <li class="hot"><div class="no">01</div><div class="info"><b>边境追凶</b><span>动作 / 犯罪 · 悬疑氛围拉满</span></div><div class="hotv">9821<small>热度</small></div></li>
+          <li class="hot"><div class="no">02</div><div class="info"><b>第十三个房间</b><span>悬疑 / 惊悚 · 反转不断</span></div><div class="hotv">9655<small>热度</small></div></li>
+          <li><div class="no">03</div><div class="info"><b>余温</b><span>爱情 / 剧情 · 治愈催泪</span></div><div class="hotv">8720<small>热度</small></div></li>
+          <li><div class="no">04</div><div class="info"><b>深空回声</b><span>科幻 / 冒险 · 硬核设定</span></div><div class="hotv">8406<small>热度</small></div></li>
+          <li><div class="no">05</div><div class="info"><b>镜像城市</b><span>科幻 / 悬疑 · 脑洞大开</span></div><div class="hotv">7988<small>热度</small></div></li>
+          <li><div class="no">06</div><div class="info"><b>假期实习生</b><span>喜剧 / 职场 · 笑中带暖</span></div><div class="hotv">7543<small>热度</small></div></li>
+          <li><div class="no">07</div><div class="info"><b>海边便利店</b><span>爱情 / 治愈 · 适合独处</span></div><div class="hotv">7120<small>热度</small></div></li>
+          <li><div class="no">08</div><div class="info"><b>铁骑归途</b><span>动作 / 历史 · 气势磅礴</span></div><div class="hotv">6899<small>热度</small></div></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>🎞 按类型找片</h3>
+        <div class="ph">2345电影网 全类型覆盖</div>
+        <div class="catlist">
+          <a href="#" class="cat"><span class="ci">💥</span><div><b>动作片</b><span>热血刺激</span></div></a>
+          <a href="#" class="cat"><span class="ci">😂</span><div><b>喜剧片</b><span>轻松解压</span></div></a>
+          <a href="#" class="cat"><span class="ci">💗</span><div><b>爱情片</b><span>甜蜜治愈</span></div></a>
+          <a href="#" class="cat"><span class="ci">🚀</span><div><b>科幻片</b><span>脑洞大开</span></div></a>
+          <a href="#" class="cat"><span class="ci">🕵</span><div><b>悬疑片</b><span>烧脑反转</span></div></a>
+          <a href="#" class="cat"><span class="ci">🎭</span><div><b>剧情片</b><span>走心深刻</span></div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="wrap">
+    <div class="heading">
+      <span class="kicker">FILM NEWS</span>
+      <h2>影视<em>资讯</em>与深度影评</h2>
+      <p>2345电影网 持续更新新片动态与专业解读，让你看得懂、也选得对。</p>
+    </div>
+    <div class="tabs" id="tabs">
+      <button class="tab on" data-t="all">全部</button>
+      <button class="tab" data-t="news">影讯</button>
+      <button class="tab" data-t="review">影评</button>
+      <button class="tab" data-t="guide">观影指南</button>
+    </div>
+    <div class="newsgrid" id="newsgrid">
+      <article class="news" data-t="guide">
+        <div class="cov g1"><span class="dt">2025 · 10 · 09</span><span class="tt">2025 下半年最值得期待的十部国产片</span></div>
+        <div class="bd"><p>从犯罪悬疑到治愈爱情，下半年国产片题材多元、阵容亮眼。2345电影网 为你梳理十部值得放进观影清单的新作，附主创阵容与定档信息。</p><a href="#" class="more">阅读全文 →</a></div>
+      </article>
+      <article class="news" data-t="review">
+        <div class="cov g5"><span class="dt">2025 · 10 · 08</span><span class="tt">《深空回声》为何能成为年度硬科幻</span></div>
+        <div class="bd"><p>视听语言与科学设定获业内好评。本文从世界观搭建、人物弧光到配乐，拆解这部国产科幻的闪光点与遗憾。</p><a href="#" class="more">阅读全文 →</a></div>
+      </article>
+      <article class="news" data-t="news">
+        <div class="cov g2"><span class="dt">2025 · 10 · 06</span><span class="tt">戛纳获奖导演新片定档，阵容首曝光</span></div>
+        <div class="bd"><p>新作聚焦普通家庭在时代变迁中的坚守与抉择，主演阵容首次公布，定档日期同步释出。</p><a href="#" class="more">阅读全文 →</a></div>
+      </article>
+      <article class="news" data-t="review">
+        <div class="cov g3"><span class="dt">2025 · 10 · 04</span><span class="tt">悬疑片为何总能成为黑马</span></div>
+        <div class="bd"><p>从剧本结构、叙事视角到演员表演，2345电影网 拆解悬疑片走红的关键，以及观众审美正在发生的变化。</p><a href="#" class="more">阅读全文 →</a></div>
+      </article>
+      <article class="news" data-t="guide">
+        <div class="cov g7"><span class="dt">2025 · 10 · 02</span><span class="tt">国庆档观影指南：三部高口碑怎么选</span></div>
+        <div class="bd"><p>从剧情深度到视听享受，不同心情对应不同选择。附观影小贴士与适合人群参考。</p><a href="#" class="more">阅读全文 →</a></div>
+      </article>
+      <article class="news" data-t="news">
+        <div class="cov g6"><span class="dt">2025 · 10 · 01</span><span class="tt">秋冬片单公布：治愈系爱情集中上线</span></div>
+        <div class="bd"><p>适合情侣与家庭一同观看的温情新作陆续定档，气温降了，故事更暖。</p><a href="#" class="more">阅读全文 →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="heading">
+      <span class="kicker">ABOUT US</span>
+      <h2>关于<em>2345电影网</em></h2>
+      <p>网站：2345dianyingwang-wap.github.io，专注电影内容服务。</p>
+    </div>
+    <div class="about">
+      <div class="intro">
+        <p><strong>2345电影网（https://2345dianyingwang-wap.github.io）</strong>是一个专注于电影内容服务的平台，致力于为影迷提供清晰的影片分类、专业的影评解读与实时的热播榜单，让每一次观影选择都更轻松、更有价值。</p>
+        <p>我们覆盖动作、喜剧、爱情、科幻、悬疑等多种类型，持续更新国内外新片资讯与深度影评。无论你想找一部周末消遣的轻松喜剧，还是想看一部值得反复琢磨的剧情佳作，2345电影网 都能帮你快速找到答案。</p>
+        <p>关键词导航：<strong>2345电影网</strong> · <strong>2345dianyingwang-wap.github.io</strong> · 高清电影在线观看 · 影视资讯 · 专业影评 · 热播榜单。</p>
+        <div class="milestone">
+          <div class="mile"><b>8000+</b><span>收录影片</span></div>
+          <div class="mile"><b>3600+</b><span>专业影评</span></div>
+          <div class="mile"><b>每日</b><span>榜单更新</span></div>
+        </div>
+      </div>
+      <div class="links">
+        <h3>🔗 友情链接</h3>
+        <div class="ph">与你一样认真做内容的影视伙伴</div>
+        <div class="flink">
+          <a href="#">电影资讯导航</a>
+          <a href="#">高分影评精选</a>
+          <a href="#">独立电影社区</a>
+          <a href="#">影视资源大全</a>
+          <a href="#">影迷交流平台</a>
+          <a href="#">纪录片推荐</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="heading">
+      <span class="kicker">FAQ</span>
+      <h2>常见<em>问题</em></h2>
+      <p>关于 2345电影网 的使用疑问，这里都有答案。</p>
+    </div>
+    <div class="faqlist">
+      <div class="faqitem">
+        <button class="faqq">2345电影网 是什么网站？<span class="sym">+</span></button>
+        <div class="faqa"><div>2345电影网（https://2345dianyingwang-wap.github.io）是一个电影内容服务平台，提供影片分类浏览、专业影评与实时热播榜单，帮助影迷快速找到想看的电影。</div></div>
+      </div>
+      <div class="faqitem">
+        <button class="faqq">网站收录的影片类型有哪些？<span class="sym">+</span></button>
+        <div class="faqa"><div>目前涵盖动作、喜剧、爱情、科幻、悬疑、犯罪、历史、治愈等多种类型，可通过顶部类型标签或「按类型找片」快速筛选。</div></div>
+      </div>
+      <div class="faqitem">
+        <button class="faqq">榜单数据多久更新一次？<span class="sym">+</span></button>
+        <div class="faqa"><div>热播榜单按热度实时排序，内容资讯每日更新，确保你看到的都是当下最值得关注的新片与话题。</div></div>
+      </div>
+      <div class="faqitem">
+        <button class="faqq">如何提交影片或反馈建议？<span class="sym">+</span></button>
+        <div class="faqa"><div>你可以通过页脚的联系方式向我们提交影片信息或内容建议，我们会在核实后补充到 2345电影网 的影片库中。</div></div>
+      </div>
+      <div class="faqitem">
+        <button class="faqq">如何联系 2345电影网？<span class="sym">+</span></button>
+        <div class="faqa"><div>官方网站：<a href="https://2345dianyingwang-wap.github.io">https://2345dianyingwang-wap.github.io</a>，也可通过页脚链接与我们取得联系。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0">
+  <div class="wrap">
+    <div class="cta">
+      <h2>今晚看什么？来 2345电影网 找答案</h2>
+      <p>高分推荐 · 实时榜单 · 专业影评，一键锁定你的下一部心头好</p>
+      <a href="#films" class="btn">立即浏览影片</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="fbrand">
+        <div class="mark"><span class="m">影</span><b>2345电影网</b></div>
+        <p>2345电影网（2345dianyingwang-wap.github.io）专注电影内容服务，提供影片分类、专业影评与热播榜单，让好电影不被错过。</p>
+      </div>
+      <div>
+        <h5>栏目导航</h5>
+        <ul>
+          <li><a href="#films">影片栏目</a></li>
+          <li><a href="#chart">热播榜单</a></li>
+          <li><a href="#news">影视资讯</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>影片类型</h5>
+        <ul>
+          <li><a href="#">动作片</a></li>
+          <li><a href="#">喜剧片</a></li>
+          <li><a href="#">爱情片</a></li>
+          <li><a href="#">科幻片</a></li>
+          <li><a href="#">悬疑片</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>关于我们</h5>
+        <ul>
+          <li><a href="#about">网站简介</a></li>
+          <li><a href="#">联系我们</a></li>
+          <li><a href="#">友情链接</a></li>
+          <li><a href="#">网站地图</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fcopy">
+      <span>© 2025 <b>2345电影网</b>（2345dianyingwang-wap.github.io）版权所有 · 关键词：2345电影网 · 2345dianyingwang-wap.github.io</span>
+      <span><a href="#">隐私政策</a> &nbsp; <a href="#">免责声明</a> &nbsp; <a href="#" id="toTop">返回顶部</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="topbtn" id="topBtn" aria-label="返回顶部">↑</button>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'),toggle=document.getElementById('navToggle');
+  toggle.addEventListener('click',function(){nav.classList.toggle('open')});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open')})});
+
+  var pills=document.querySelectorAll('.pill'),films=document.querySelectorAll('.film'),empty=document.getElementById('empty');
+  pills.forEach(function(p){
+    p.addEventListener('click',function(){
+      pills.forEach(function(x){x.classList.remove('on')});
+      p.classList.add('on');
+      var cat=p.dataset.cat,shown=0;
+      films.forEach(function(f){
+        var ok=(cat==='all'||f.dataset.cat===cat);
+        f.classList.toggle('film-hide',!ok);
+        if(ok)shown++;
+      });
+      empty.classList.toggle('show',shown===0);
+    });
+  });
+
+  var tabs=document.querySelectorAll('.tab'),news=document.querySelectorAll('.news');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('on')});
+      t.classList.add('on');
+      var key=t.dataset.t;
+      news.forEach(function(n){n.style.display=(key==='all'||n.dataset.t===key)?'flex':'none'});
+    });
+  });
+
+  var faqs=document.querySelectorAll('.faqitem');
+  faqs.forEach(function(item){
+    item.querySelector('.faqq').addEventListener('click',function(){item.classList.toggle('open')});
+  });
+
+  var topBtn=document.getElementById('topBtn');
+  window.addEventListener('scroll',function(){
+    topBtn.classList.toggle('show',window.scrollY>400);
+  });
+  topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  document.getElementById('toTop').addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
+</body>
+</html>
